@@ -8,4 +8,6 @@ then
     #exit 1 #other than 0
 fi
 
-echo "Hello"
+#dnf list installed mysql
+
+#echo "Hello"
