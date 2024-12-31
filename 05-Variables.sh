@@ -1,9 +1,11 @@
 #!/bin/bash
 
-echo "Please enter your name ::"
-read -s USERNAME
+echo "Please enter your username::" # text entered here will be added as value to variable
 
-echo "username entered is : $USERNAME"
+read -s USERNAME # Here USERNAME is the variable name
 
-echo "Please enter your Password ::"
+echo "username entered: $USERNAME"
+
+echo "Please enter your password::"
+
 read -s PASSWORD
