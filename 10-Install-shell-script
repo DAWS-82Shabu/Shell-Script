@@ -5,7 +5,7 @@ USERID=$(id -u) # id -u is to check ID of the user (u) and store in USERID varia
 if [ $USERID -ne 0 ] # if USERID is not 0 then user doesnot have root access so give error
 then
     echo "ERROR:: You must have sudo access to execute this script"
-    exit 1 #other than 0
+    exit 2 #other than 0
 fi
 
 dnf list installed mysql # to check what mysql packages are installed 
