@@ -6,10 +6,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FOLDER="/var/log/shellscript-logs"
-LOG_FILE=$(echo $0 | cut -d "." -f1 )
-TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+LOGS_FOLDER="/var/log/shellscript-logs" # create a folder in /var/log/ with name shellscript-logs
+LOG_FILE=$(echo $0 | cut -d "." -f1 ) # echo $0 will give you script name | 
+# cut -d "." -f1 will give you only file name without extension like 13-logs.sh --> 13-logs
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S) # will give time stamp
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log" # the genrated log file is will in this folder
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -22,6 +23,8 @@ VALIDATE(){
 }
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
+# &>>$LOG_FILE_NAME will redirect this to log file you will not see on server screen
 
 if [ $USERID -ne 0 ]
 then
