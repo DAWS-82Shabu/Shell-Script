@@ -1,16 +1,16 @@
 #!/bin/bash
 
-USERID=$(id -u)
+USERID=$(id -u) # id -u is to check ID of the user (u) and store in USERID variable
 
-if [ $USERID -ne 0 ]
+if [ $USERID -ne 0 ] # if USERID is not 0 then user doesnot have root access so give error
 then
     echo "ERROR:: You must have sudo access to execute this script"
     exit 1 #other than 0
 fi
 
-dnf list installed mysql
+dnf list installed mysql # to check what mysql packages are installed 
 
-if [ $? -ne 0 ]
+if [ $? -ne 0 ] # $? command is to check last command status called exit status 
 then # not installed
     dnf install mysql -y # command to instal Mysql
     if [ $? -ne 0 ]
