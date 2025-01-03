@@ -17,7 +17,7 @@ VALIDATE(){
     fi
 }
 
-if [USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "EEOR: you should have sudo access"
     exit 2
